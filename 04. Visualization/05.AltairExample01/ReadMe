@@ -1,0 +1,83 @@
+J/ApJ/641/L21  Black hole mass and velocity dispersion relation  (Greene+, 2006)
+================================================================================
+The M_BH_-{sigma}_*_ relation in local active galaxies.
+    Greene J.E., Ho L.C.
+   <Astrophys. J., 641, L21-L24 (2006)>
+   =2006ApJ...641L..21G
+================================================================================
+ADC_Keywords: Active gal. nuclei ; Velocity dispersion ; Redshifts
+Keywords: galaxies: active - galaxies: kinematics and dynamics -
+          galaxies: nuclei - galaxies: Seyfert
+
+Abstract:
+    We examine whether active galaxies obey the same relation between
+    black hole mass and stellar velocity dispersion as inactive systems,
+    using the largest published sample of velocity dispersions for active
+    nuclei to date. The combination of 56 original measurements with
+    objects from the literature not only increases the sample from the 15
+    considered previously to 88 objects but allows us to cover an
+    unprecedented range in both stellar velocity dispersion (30-268km/s)
+    and black hole mass (10^5^-10^8.6^M_{sun}_).
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe         80        .   This file
+table1.dat     82       88   Sample properties
+--------------------------------------------------------------------------------
+
+See also:
+  http://www.sdss.org : SDSS Home Page
+  J/ApJ/632/799       : NGC4395 light curves (Peterson+, 2005)
+  J/ApJ/613/682       : AGN central masses and broad-line region sizes
+                                                       (Peterson+, 2004)
+
+Byte-by-byte Description of file: table1.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units       Label   Explanations
+--------------------------------------------------------------------------------
+   1- 24  A24   ---         Name    Source identification
+  26- 33  F8.6  ---         z       Redshift
+  35- 39  F5.1  km/s        sigma*  Stellar velocity dispersion {sigma}_*_ (1)
+  41- 44  F4.1  km/s      e_sigma*  Formal uncertainty in sigma*
+      46  A1    ---       n_sigma*  Origin of {sigma}_*_ measurement (2)
+  48- 51  I4    km/s        FWHM    ? H{alpha} Full-Width at Half-Maximum
+  53- 56  I4    km/s      e_FWHM    ? Formal uncertainty in FWHM
+  58- 62  F5.2  [10-7W]     logL    ? Log of H{alpha} luminosity in erg/s
+  64- 67  F4.2  [10-7W]   e_logL    ? Formal uncertainty in logL
+  69- 72  F4.2  [solMass]   logM    Log of the Black Hole mass (3)
+  74- 77  F4.2  [solMass] E_logM    ? Formal upper limit uncertainty in logM
+  79- 82  F4.2  [solMass] e_logM    Formal uncertainty (or lower limit) in logM
+--------------------------------------------------------------------------------
+Note (1): From the CaII triplet ({lambda}{lambda}8498,8542,8662{AA})
+          unless otherwise noted.
+Note (2): Origin of {sigma}_*_ measurement, defined as follows:
+      a = Measured using the Fe region (5250-5820{AA});
+      b = Measured (at least in part) using the MgIb triplet
+          ({lambda}{lambda}5167,5173,5184{AA}) region.
+Note (3): Actual uncertainties in M_BH_ are dominated by systematics in
+     broad-line region geometry. Sources from Barth et al.
+     (2005ApJ...619L.151B) are included below the SDSS sample from this
+     paper; for consistency the BH masses were redetermined from the DR3
+     spectra using the H{alpha} formalism. However, in general our
+     FWHM_H{alpha}_ and M_BH_ values are consistent with those in Barth et
+     al., and none of our conclusions are altered if we use the masses from
+     that study. We further include the reverberation-mapped sources, with
+     {sigma}_*_ measurements representing the weighted mean of values from
+     Onken et al. (2004ApJ...615..645O) and Nelson et al.
+     (2004ApJ...615..652N), and BH masses derived from the H{beta} lags and
+     FWHM presented in Peterson et al. (2004, Cat. <J/ApJ/613/682>). For
+     completeness, we also include POX 52 (Barth et al.
+     2004ApJ...607...90B) and NGC 4395 ({sigma}_*_ from Filippenko & Ho
+     2003ApJ...588L..13F, BH mass from Peterson et al. 2005, Cat.
+     <J/ApJ/632/799>).
+
+    M_BH_=(2.0^+0.4^_-0.3_)*10^6^M_{sun}_(L_H{alpha}_/10^42^erg/s)^0.55+/-0.02^*
+    (FWHM_H{alpha}_/10^3^km/s)^2.06+/-0.06^ (Greene & Ho 2005ApJ...630..122G).
+--------------------------------------------------------------------------------
+
+History:
+    From electronic version of the journal
+================================================================================
+(End)                   Greg Schwarz [AAS], Marianne Brouty [CDS]    26-Jul-2007
