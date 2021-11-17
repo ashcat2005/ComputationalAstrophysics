@@ -1,0 +1,107 @@
+ 10 This source has a redshift listed in NED that was not reported in table2 
+ 10   because we were unable to trace back to its original source.
+ 19 This source has a redshift listed in NED that was not reported in table2 
+ 19   because we were unable to trace back to its original source.
+ 30 This source has a redshift listed in NED that was not reported in table2 
+ 30   because we were unable to trace back to its original source.
+ 33 Redshift was obtained from a pre-release version of the final redshift 
+ 33  catalogue from the 6dF Galaxy Survey (Cat. <VII/249>).
+ 42 This source has a redshift listed in NED that was not reported in table2 
+ 42   because it was considered to be unreliable.
+ 57 Lies so close to bright foreground stars that no optical identification is 
+ 57  possible from the DSS images.
+ 61 PKS 0454-81 appears in the scan maps, but the follow-up data were degraded 
+ 61  by bad weather and we did not have the opportunity to re-observe it. 
+ 61  For this source we obtained a flux density measurement from its 
+ 61  observations as a secondary calibrator in 2006 October.
+ 68 The spectra showed a featureless optical continuum from which no redshift 
+ 68  could be measured.
+ 73 Lies within the boundaries of the Large Magellanic Cloud and its 
+ 73  identification is uncertain.
+ 77 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+ 77  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+ 77  (P. J. Hancock and E. Mahony).
+ 78 The spectra showed a featureless optical continuum from which no redshift 
+ 78  could be measured.
+ 85 This source has a redshift listed in NED that was not reported in table2 
+ 85   because we were unable to trace back to its original source.
+ 92 (PKS 0637-752) is a quasar with an asymmetric jet seen in radio and X-ray 
+ 92  images (Schwartz et al., 2000ApJ...540L..69S). The tabulated flux density 
+ 92  is dominated by the core with about 10% in the 15-arcsec jet. It is one of 
+ 92  the largest (100kpc) and most luminous jets known with properties 
+ 92  similar to 3C273.
+ 98 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+ 98  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+ 98  (P. J. Hancock and E. Mahony).
+109 (PMN J08355953) has a highly inverted radio spectra, with spectral index 
+109  alpha^20^_5_=+0.88, but has no obvious optical counterpart. Although the 
+109  Galactic latitude is relatively low (b=11{deg}), the optical extinction is 
+109  only 1.1mag in the B band. The lack of optical ID suggests this could be a 
+109  distant radio galaxy rather than a QSO.
+138 redshift has been measured with the ESO 3.6-m telescope by P. G. Edwards and
+138  his collaborators (Edwards et al., in preparation).
+140 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+140  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+140  (P. J. Hancock and E. Mahony).
+151 (PKS 1143-696) is a resolved double in the SUMSS image, and is also double 
+151  in the 20-GHz image. The SUMSS source is larger than the ATCA beam at 
+151  20GHz, suggesting that the measured flux density may be a lower limit to 
+151  the true value. The position of the low-frequency radio centroid is 
+151  slightly different from the AT20G position.
+160 Lies so close to bright foreground stars that no optical identification is 
+160  possible from the DSS images.
+162 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+162  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+162  (P. J. Hancock and E. Mahony).
+166 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+166  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+166  (P. J. Hancock and E. Mahony).
+208 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+208  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+208  (P. J. Hancock and E. Mahony).
+211 (PKS 1548-79) is a relatively nearby (z=0.15) galaxy with an unresolved 
+211  radio 211  source which has a steep spectrum in our 5-, 8- and 20-GHz data.
+211  The galaxy has strong optical emission lines, and has been studied in 
+211  detail by Tadhunter et al. (2001MNRAS.327..227T).
+221 appears to be one component of a source (PKS 1622-29) which is double 
+221  (component separation ~1.5arcmin) in the NVSS image. Both components fall 
+221  within the ATCA 5-GHz beam, but the 20-GHz image is centred on the eastern 
+221  component and the other component falls outside the primary beam. Our 
+221  measured 20-GHz flux density is therefore an underestimation of the total 
+221  flux density. This source has a redshift listed in NED that was not 
+221   reported in table2 because we were unable to trace back to its original 
+221   source.
+246 Redshift measurement from optical spectra obtained at the ANU 2.3-m 
+246  telescope in 2007 April and June by R. W. Hunstead and two of the authors 
+246  (P. J. Hancock and E. Mahony).
+258 The AT20G source (corresponding to PKS 1932-46) is flagged as extended, and 
+258  the image appears to show a compact double. The source is a 30arcsec double
+258  at 5GHz (Duncan & Sproats, 1992PASAu..10...16D). The optical position given
+258  in NED is associated with a z=0.231 galaxy at (J2000) 19:35:56.5 46:20:41, 
+258  which is offset by 3.2arcsec from the AT20G position but appears to be the 
+258  correct ID.
+273 (PKS 2052-47) is a z=1.5 QSO which is also detected as both an X-ray and a 
+273  gamma-ray source. Since this source is an ATCA calibrator, its flux density
+273  has been monitored at several epochs during 2002-07. The calibrator data 
+273  suggest that our AT20G observation of this object in 2004 October took 
+273  place during the declining stage of a flaring phase, during which the flux 
+273  density of the source changed rapidly. This fast change in flux and 
+273  polarization properties is clearly visible in our data, with the 20-GHz 
+273  flux density decreasing by a factor of 2.5 in 2d. This makes it difficult 
+273  to give a reliable value for the flux density and fractional polarization 
+273  of this source.
+278 This source has a redshift listed in NED that was not reported in table2 
+278   because we were unable to trace back to its original source.
+292 (PKS 2227-3952) is a resolved triple in the SUMSS image. The low-frequency 
+292  emission extends somewhat beyond the 20-GHz ATCA beam, but the source is 
+292  not flagged as extended here, since the 20-GHz flux is dominated by 
+292  the core.
+310  flagged as extended, appears to be the core of a well-known and highly 
+310  extended radio galaxy PKS 2331-240. The optical ID is a galaxy at z=0.0477.
+310  The extended flux is well outside of the primary beam used for these 
+310  observations and the flux densities listed correspond mainly to the core.
+313 Redshift was obtained from a pre-release version of the final redshift 
+313  catalogue from the 6dF Galaxy Survey (Cat. <VII/249>).
+319 (PKS 2356-61) is a FanaroffRiley type II galaxy characterized by four bright
+319  regions of emissions that are slightly asymmetric about the core 
+319  (Burke et al., in preparation).
