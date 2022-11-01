@@ -182,7 +182,7 @@ def main():
 	Nt = int(np.ceil(tEnd/dt))
 	
 	# prep figure
-	fig = plt.figure(figsize=(4,5), dpi=80)
+	fig = plt.figure()
 	grid = plt.GridSpec(3, 1, wspace=0.0, hspace=0.3)
 	ax1 = plt.subplot(grid[0:2,0])
 	ax2 = plt.subplot(grid[2,0])
@@ -231,7 +231,7 @@ def main():
 			plt.plot(rlin, rho_analytic, color='gray', linewidth=2)
 			rho_radial = Density( rr, pos, m, h )
 			plt.plot(rlin, rho_radial, color='blue')
-			plt.pause(0.001)
+			plt.pause(0.0001)
 	    
 	
 	
@@ -239,7 +239,8 @@ def main():
 	plt.sca(ax2)
 	plt.xlabel('radius')
 	plt.ylabel('density')
-	
+
+	print('Done!')
 	# Save figure
 	plt.savefig('sph.png',dpi=240)
 	plt.show()
