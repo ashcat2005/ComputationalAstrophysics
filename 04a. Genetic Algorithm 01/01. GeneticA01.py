@@ -44,10 +44,17 @@ class genetic_algorithm():
         self.selection = self.select()
     
     def get_random_string(self):
+        '''
+        Returns the initial random string
+        '''
         rand_str = ''.join(random.choice(letters) for i in range(self.n_g))
         return rand_str
 
     def select(self):
+        '''
+        Calculates the score of each sample and
+        returns the best results 
+        '''
         self.mean_score = 0.
         self.max_score = 0.
         self.best_sample = ''
@@ -70,6 +77,9 @@ class genetic_algorithm():
         return selection
 
     def generate(self, selection):
+        '''
+        Generates a new generation from the selected sample
+        '''
         new_pop = []
         for i  in range(self.N):
             sample01 = random.choice(selection)
@@ -85,15 +95,18 @@ class genetic_algorithm():
         return new_pop
     
     def update(self):
+        '''
+        Updates the algorithm by creating a new generation
+        '''
         self.pop = self.generate(self.selection)
         self.selection = self.select()
-        gui.screen_update()
-        pygame.display.flip()
-        screen.blit(background,[0,0])
 
 
 class GUI():
     def __init__(self):
+        '''
+        Initializes the text labels for the GUI
+        '''
         big_font =  pygame.font.Font("freesansbold.ttf", 40)
         text_font =  pygame.font.Font("freesansbold.ttf", 20)
         self.title = big_font.render('Genetic Algorithm', False, 'black')
@@ -105,6 +118,9 @@ class GUI():
         
     
     def text_update(self):
+        '''
+        Updates the samples and scores labels
+        '''
         big_font =  pygame.font.Font("freesansbold.ttf", 35)
         text_font =  pygame.font.Font("freesansbold.ttf", 20)
         samples_font =  pygame.font.Font("freesansbold.ttf", 15)
@@ -116,6 +132,9 @@ class GUI():
             self.samples.append(samples_font.render(ga.pop[i], False, 'black'))
                    
     def screen_update(self):
+        '''
+        Updates the complete GUI
+        '''
         self.text_update()
         screen.blit(self.title, (50,SCREEN_HEIGHT//10))
         screen.blit(self.begin, self.begin_rect)
@@ -130,11 +149,7 @@ class GUI():
 
         for i in range(21):
             screen.blit(self.samples[i], (600, 100+25*i))
-
-
-
-
-
+        
 
 #-----------------------------------------------------------------------------#
 # MAIN
@@ -181,9 +196,9 @@ while generation<10000:
     if ga.begin == True:
         ga.update()
         generation += 1
-    else:
-        gui.screen_update()
-        pygame.display.flip()
-        screen.blit(background,[0,0])
+   
+    gui.screen_update()
+    pygame.display.flip()
+    screen.blit(background,[0,0])
     clock.tick(10)
         

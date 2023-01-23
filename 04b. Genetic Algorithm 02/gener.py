@@ -1,7 +1,9 @@
 import numpy as np
 import random
 
-denom = 8   
-for i in range(2*denom):
-    angle = i*np.pi/denom
-    print(np.cos(angle),",", np.sin(angle))
+X = np.array([10,20,3,4])
+
+
+for i in range(20):
+    j = random.choice(range(len(X)))
+    print((j+1)//len(X))
