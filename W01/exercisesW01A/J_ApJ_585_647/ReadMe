@@ -1,0 +1,72 @@
+J/ApJ/585/647       Velocity dispersion in AGN               (Boroson, 2003)
+================================================================================
+Does the narrow [O III] {lambda}5007 line reflect the velocity dispersion
+in active galactic nuclei?
+    Boroson T.A.
+   <Astrophys. J. 585, 647 (2003)>
+   =2003ApJ...585..647B
+================================================================================
+ADC_Keywords: QSOs ; Active gal. nuclei ; Redshifts ; Radio lines ;
+              Velocity dispersion
+Keywords: black hole physics - galaxies: active - galaxies: bulges -
+          galaxies: nuclei - quasars: emission lines
+
+Abstract:
+    It has been proposed that the width of the narrow [O III] {lambda}5007
+    emission line can be used as a surrogate for the stellar velocity
+    dispersion in active galaxies. This proposition is tested using the
+    Sloan Digital Sky Survey (SDSS) Early Data Release (EDR) spectra of
+    107 low-redshift radio-quiet QSOs and Seyfert 1 galaxies by
+    investigating the correlation between black hole mass, as determined
+    from H{beta} FWHM and optical luminosity, and [O III] FWHM. The
+    correlation is real, but the scatter is large. Without additional
+    information or selection criteria, the [O III] width can predict the
+    black hole mass to a factor of 5.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe         80        .   This file
+table1.dat     62      115   Line widths and black hole masses of SDSS sample
+--------------------------------------------------------------------------------
+
+See also:
+   J/AJ/123/567 : SDSS quasar catalog. EDR. (Schneider+, 2002)
+
+Byte-by-byte Description of file: table1.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units     Label     Explanations
+--------------------------------------------------------------------------------
+   1-  4  A4    ---       ---       [SDSS]
+   6- 24  A19   ---       SDSS      SDSS name (based oin J2000 position)
+  26- 31  F6.4  ---       z         Redshift
+  33- 37  I5    km/s      FWHM      The Full-Width at Half-Maximum of H{beta}
+  39- 41  I3    km/s      sigma     The [O III] velocity dispersion
+  43- 46  F4.2 [solMass]  logM      Log of the black hole mass (1)
+  48- 52  F5.2  [---]     logR      ? Log of the ratio of flux density at 5GHz
+                                       to flux density at 2500 Angstrom
+  54- 55  A2    ---     f_logR      Flag on logR (2)
+--------------------------------------------------------------------------------
+Note (1): Derived using the formula M=v^2^*R_BLR_/G, where
+    v=3^0.5^/2*FWHM, and R_BLR_=32.9({lambda}*L_5100_/10^44^ergs/s)^0.7^
+    light days (Kaspi et al., 2000ApJ...533..631K). The values of L_5100_
+    were derived from the r^*^ photometry in the SDSS database. Fluxes
+    were converted to luminosities using the Schlegel et al.
+    (1998ApJ...500..525S) maps for correcting for galactic absorption,
+    H_0_=75km/s/Mpc, and q_0_=0.5.
+
+Note (2): Flags:
+    : = indicates a differences between the radio and optical centroid of
+        more than 2 arcseconds
+   nd = Not detected
+   no = Not observed
+--------------------------------------------------------------------------------
+
+History:
+    From electronic version of the journal
+
+References:
+    Stoughton et al., 2002AJ....123..485S, SDSS: early data release.
+================================================================================
+(End)                    Greg Schwarz [AAS], Patricia Bauer [CDS]    29-Apr-2003
