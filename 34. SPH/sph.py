@@ -199,7 +199,7 @@ def main():
 	""" N-body simulation """
 	
 	# Simulation parameters
-	N     = 1000    # Number of particles
+	N     = 500    # Number of particles
 	t     = 0      # current time of the simulation
 	tEnd  = 12     # time at which simulation ends
 	dt    = 0.04   # timestep
@@ -268,8 +268,8 @@ if __name__== "__main__":
 	data, rho_data, density_data, rho_analytic = main()
 	print()
 	print("--- Execution Time : %s seconds ---" % (time.time() - start_time))
-	np.save('data/data.npy', data)
-	np.save('data/rho_data.npy', rho_data)
-	np.save('data/density_data.npy', density_data)
-	np.save('data/rho_analytic.npy', rho_analytic)
+	#np.save('data/data.npy', data)
+	#np.save('data/rho_data.npy', rho_data)
+	#np.save('data/density_data.npy', density_data)
+	#np.save('data/rho_analytic.npy', rho_analytic)
 	RealTimePlot(data, rho_data, density_data, rho_analytic)
