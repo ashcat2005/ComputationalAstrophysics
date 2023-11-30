@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Circle, Rectangle
+from matplotlib.patches import Circle
 
 """
 
@@ -31,27 +31,23 @@ def main():
     # Initial Conditions
     np.random.seed(42)
     F = np.ones((Ny,Nx,NL)) + 0.01*np.random.randn(Ny,Nx,NL)
-    #X, Y = np.meshgrid(range(Nx), range(Ny))
-    F[:,:,3] += 2.# * (1+0.2*np.cos(2*np.pi*X/Nx*4))
+    X, Y = np.meshgrid(range(Nx), range(Ny))
+    F[:,:,3] += 2 * (1+0.2*np.cos(2*np.pi*X/Nx*4))
     rho = np.sum(F,2)
     for i in idxs:
         F[:,:,i] *= rho0 / rho
     
     # Obstacle definition
-    x0 = Nx/4       # Edge of the obstacle
-    height = Ny/3       # Height of the obstacle
-    width = Nx/5    # Width of the obstacle
-
+    x0, y0 = Nx/4, Ny/2 # Center of the cylinder
+    r0 = Ny/5          # Radius of the cylinder
+    #X, Y = np.meshgrid(range(Nx), range(Ny))
+    #obstacle = distance(x0, y0, X, Y) < r0
     obstacle = np.full((Ny,Nx), False)
     for y in range(Ny):
         for x in range(Nx):
-            #if x>x0 and x<x0+width and y<height:
-            #    obstacle[y][x] = True
-            if x>x0 and x<x0+width and y>Ny-height:
+            if distance(x0, y0, x, y) < r0:
                 obstacle[y][x] = True
-            
-    obstacle_patch1 = Rectangle((x0,Ny-height), width, height, linewidth=2, edgecolor='k', facecolor='k')
-    #obstacle_patch2 = Rectangle((x0,0), width, height, linewidth=2, edgecolor='k', facecolor='k')
+    obstacle_patch = Circle((x0,y0), r0, linewidth=2, edgecolor='k', facecolor='k')
 
 
     # Figure
@@ -96,14 +92,11 @@ def main():
             vorticity = (np.roll(ux, -1, axis=0) - np.roll(ux, 1, axis=0)) - (np.roll(uy, -1, axis=1) - np.roll(uy, 1, axis=1))
             vorticity[obstacle] = np.nan
             vorticity = np.ma.array(vorticity, mask=obstacle)
-            u = np.sqrt(ux**2+uy**2)
-            plt.imshow(vorticity, cmap='hot')   
-            #plt.imshow(u, cmap='hot')         
+            plt.imshow(vorticity, cmap='hot')            
             plt.clim(-.1, .1)
             ax = plt.gca()
             ax.invert_yaxis()
-            ax.add_patch(obstacle_patch1)
-            #ax.add_patch(obstacle_patch2)
+            ax.add_patch(obstacle_patch)
             ax.get_xaxis().set_visible(False)
             ax.get_yaxis().set_visible(False)   
             ax.set_aspect('equal')  
@@ -111,7 +104,7 @@ def main():
             
     
     # Save figure
-    #plt.savefig('latticeboltzmann.png',dpi=240)
+    plt.savefig('latticeboltzmann.png',dpi=240)
     plt.show()
         
     return 0
