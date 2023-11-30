@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\pagestyle{plain}
+\usepackage{latexsym,exscale,amsfonts,amsmath,amssymb,array}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\setlength{\topmargin}{-2.3cm}
+\setlength{\textheight}{23.8cm}
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.4cm}
+\newcommand{\totaldiffx}{\frac{d}{dx}}
+\newcommand{\pardiffx}{\frac{\partial}{\partial x}}
+\newcommand{\luft}{\:\!}
+
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[comma,numbers,sort&compress]{natbib}
+
+
+\begin{document}
+\begin{center}
+\large \bf Computational Astrophysics \rm \\
+2019\\
+{\small Exercises 13. Elliptic PDEs. Poisson Equation}
+\end{center}
+
+\textbf{Poisson Equation} \\
+In these exercises you will solve the Poisson equation,
+\begin{equation}
+\nabla^2 \Phi = 4\pi G \rho,
+\end{equation}
+assuming spherical symmetry. 
+
+\textbf{Homogeneous Sphere}\\
+Consider the Poisson equation as a
+  second-order ODE  and reduce it
+  to first order (as described in class). 
+\begin{enumerate}
+\item Integrate it with forward Euler 
+  using an appropriate initial condition.  Remember, that
+  the gravitational potential is determined only up to a constant, so
+  you will need to adjust your result to match the boundary condition at $R=10^9 \text{ cm}$,
+  \begin{equation}
+    \Phi(R) = -\frac{G M(R)}{R}\,\,.
+  \end{equation}
+
+  Since you will have to compute the mass on your grid,
+  assume that you are solving for the gravitational
+  potential of a homogeneous sphere ($\rho = const$), which is given by
+  \begin{equation}
+    \Phi(r) = \frac{2}{3}\pi G \rho  (r^2 - 3 R^2)\,\,.
+  \end{equation}
+  Show that your code converges to the exact value of $\Phi$ at
+  $R_\text{outer}$ (the relative error must converge to zero at the
+  right rate). Doing this is a bit tricky and you must be careful to
+  adjust (via an additive constant) your solution at $r=0$ (where your
+  $\Phi$ will be zero).
+
+\item Now you'll try the more sophisticated matrix method. 
+Write a code to solve Poisson equation via the linear system
+\begin{equation}
+J\mathbf{\Phi} = \mathbf{b}\,\,,
+\end{equation}
+as described in class. Check that your implementation works for the 
+particular case $\rho = const$. 
+\end{enumerate}
+  
+  
+ \textbf{Stellar Model} \\
+A supernova is a process in which a dying star liberates a huge quantity of energy and mass.\\
+ In this section we will solve Poisson equation to obtain the gravitational potential inside the mass distribution of a dying star. \\
+In the data directory you will find a file with data called {\tt presupernovaStar.dat}. The columns in this file are:
+\begin{itemize}
+\item First column: grid point index
+\item Second column: enclosed mass of the star ($\text{gr}$)
+\item Third column: radius of the distribution ($\text{cm}$)
+\item Fourth column: temperature ($\text{K}$)
+\item Fifth column: mass density ($\text{gr/cm}^3$)
+\end{itemize}
+
+\begin{enumerate}
+\item Read the data and make a log-log plot of
+  $\rho(r)$ for radii $r < 10^9 \,\mathrm{cm}$. 
+
+\item Set up an equidistant grid with an outer radius of
+  $10^9\,\mathrm{cm}$ and interpolate the density onto your new
+  equidistant grid. You may choose what interpolation method to
+  use.
+
+\item Use the code that you write in the first exercise to obtain and plot 
+the gravitational potential as a function of radius, solving the ODEs system.
+
+\item Use the code to solve the Poisson equation using the matrix method.
+Remember that you must stagger your
+grid (shift it by $0.5 dx$ to make sure you have no point at the origin).
+Obtain again $\Phi$ as a function of radius. The gravitational potential obtained
+with this method must match (within errors) the potential obtained with
+the ODE method.  Plot both in the same figure. 
+
+\end{enumerate}
+
+Happy Coding :) !
+
+
+\end{document}
