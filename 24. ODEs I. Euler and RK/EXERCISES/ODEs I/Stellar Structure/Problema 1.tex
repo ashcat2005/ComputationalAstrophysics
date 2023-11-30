@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\pagestyle{plain}
+\usepackage{latexsym,exscale,amsfonts,amsmath,amssymb,array}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\setlength{\topmargin}{-2.3cm}
+\setlength{\textheight}{23.8cm}
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.4cm}
+\newcommand{\totaldiffx}{\frac{d}{dx}}
+\newcommand{\pardiffx}{\frac{\partial}{\partial x}}
+\newcommand{\luft}{\:\!}
+
+\usepackage{graphicx}
+%\usepackage[latin1]{inputenc}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[comma,numbers,sort&compress]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\begin{document}
+\begin{center}
+\large \bf Astrofísica Computacional\rm \\
+2020\\
+{\small Problema 1. Estructura de una Enana Blanca}
+\end{center}
+
+ {\bf Modelo de la Estructura Interna de una Enana Blanca} \\
+ 
+En este problema se modelará la estructura interna de una enana blanca utilizando las ecuaciones de un modelo simplificado de la estructura estelar utilizando las ecuaciones
+\begin{align}
+\frac{dP}{dr} &= - \frac{GM(r)}{r^2}\, \rho\,\,, &\hspace{1cm}
+\text{Equilibrio hidrostático}\\
+\frac{dM}{dr} &= 4\pi \rho r^2\,\,. &\hspace{1cm} \text{Conservación de la masa}
+\end{align}
+
+Para completar el conjunto de ecuaciones, también debe considerarse una ecuación de estado. En este modelo simplificado, en el que no se resolverá la ecuación de energía interna, se utilizará una ecuacion politrópica,
+\begin{equation}
+P = K \rho^\Gamma\,\,,
+\end{equation}
+donde $K$ se denomina la \textit{constante politrópica} y $\Gamma$ es el \textit{índice adiabático} ( i.e. la razón entre los calores específicos).  \\
+
+Como es bien conocido, las enanas blancas son objetos estelares cuya gravedad está soportada por la presión de degeneración de electrones. En el caso de una enana blanca relativista, completamente degenerada, el valor de las constantes en la ecuación de estado es
+\begin{equation}
+\begin{aligned}
+K &= 1.244 \times 10^{15} \times (0.5)^\Gamma \text{ dinas cm}^{-2}\,\, (g^{-1} \mathrm{cm^3})^\Gamma\\
+\Gamma &= 4/3\,\,.
+\end{aligned}
+\end{equation}
+
+El objetivo de este problema será integrar las ecuaciones de estructura estelar para obtener las funciones de densidad y presión utilizando el método de Euler y un método de Runge-Kutta a su elección (RK2, RK3, RK4, adaptativo, etc.).
+
+Implemente una malla adecuada y utilice el valor de densidad en el centro de la estrella de $\rho_c = 10^{10} \textrm{ g cm}^{-3}$. Debe realizar la integración hasta que alcance la frontera de la estrella, donde la presión debe ser nula (puede considerar el valor de corte como $10^{-10} P_c$). Para mostrar la convergencia de su algoritmo, puede calcular la masa de la estrella utilizando el método de RK con multiples resoluciones.
+Con los datos obtenidos de su modelo, realice una gráfica de $\rho(r)$, $P(r)$ y $M(r)$. Con un adecuado re-escalamiento de sus ejes puede mostrar las tres curvas en una sola figura.
+
+
+
+%% {\bf Hints on the solution of the above equations}
+%% \begin{itemize}
+%% \item You will first need to setup a grid from $r=0$ to 
+%%  some $r = r_\mathrm{max}$. Make it uniform.
+%% \item This is an IVP and it is natural to specify boundary conditions
+%%   at the origin. Be careful in doing this, since $r^{-2}$ is singular
+%%   at $r=0$. You need a special case for $r = 0$ in the RHS routine.
+%% \item You will need to compute the density from the pressure each time
+%%   the RHS routine is called. You do this by inverting the EOS.
+%% \item Mark the point at which the pressure drops below some prespecified
+%%   fraction of the central pressure as the surface of the star.
+%% \end{itemize}
+
+
+\end{document}

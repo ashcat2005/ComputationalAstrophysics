@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\pagestyle{plain}
+\usepackage{latexsym,exscale,amsfonts,amsmath,amssymb,array}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\setlength{\topmargin}{-2.3cm}
+\setlength{\textheight}{23.8cm}
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.4cm}
+\newcommand{\totaldiffx}{\frac{d}{dx}}
+\newcommand{\pardiffx}{\frac{\partial}{\partial x}}
+\newcommand{\luft}{\:\!}
+
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[comma,numbers,sort&compress]{natbib}
+
+
+\begin{document}
+\begin{center}
+\large \bf Computational Astrophysics \rm \\
+2019\\
+{\small Exercises 10. Ordinary Differential Equations (ODEs)}
+\end{center}
+
+ {\bf ODE Integration:  Stellar Structure} \\
+ 
+Consider the system of two ODEs describing a simple model of stellar structure
+\begin{align}
+\frac{dP}{dr} &= - \frac{GM(r)}{r^2}\, \rho\,\,, &\hspace{1cm}
+\text{Hydrostatic Equilbrium}\\
+\frac{dM}{dr} &= 4\pi \rho r^2\,\,. &\hspace{1cm} \text{Mass Conservation}
+\end{align}
+
+To complete the set of equations also requires an Equation Of State (EOS), i.e. a
+relation between density and pressure. Since we will not solve an
+internal energy equation, we will use a simplified EOS that is
+barotropic: $P=P(\rho)$.  A possible choice is the polytropic EOS,
+\begin{equation}
+P = K \rho^\Gamma\,\,,
+\end{equation}
+where $K$ is the polytropic constant and $\Gamma$ is the adiabatic
+index, i.e. the ratio of the specific heats. \\
+A good kind of star to model
+with a barotropic EOS is a white dwarf, which is supported by the
+pressure of degenerate electrons.  In the case of a fully
+relativistically degenerate white dwarf, we have the values
+\begin{equation}
+\begin{aligned}
+K &= 1.244 \times 10^{15} (0.5)^\Gamma \text{dyne cm}^{-2}\,\, (g^{-1} \mathrm{cm^3})^\Gamma\\
+\Gamma &= 4/3\,\,.
+\end{aligned}
+\end{equation}
+
+In this exercise, you will solve the simplified stellar
+structure equations by integrating them from the origin to the stellar
+surface using Forward Euler, RK2 and, optionally also RK3, and
+RK4. You will demonstrate convergence. 
+
+
+%% {\bf Hints on the solution of the above equations}
+%% \begin{itemize}
+%% \item You will first need to setup a grid from $r=0$ to 
+%%  some $r = r_\mathrm{max}$. Make it uniform.
+%% \item This is an IVP and it is natural to specify boundary conditions
+%%   at the origin. Be careful in doing this, since $r^{-2}$ is singular
+%%   at $r=0$. You need a special case for $r = 0$ in the RHS routine.
+%% \item You will need to compute the density from the pressure each time
+%%   the RHS routine is called. You do this by inverting the EOS.
+%% \item Mark the point at which the pressure drops below some prespecified
+%%   fraction of the central pressure as the surface of the star.
+%% \end{itemize}
+
+
+\begin{enumerate}
+\item In the code directory  you will finde a code skeleton for you to work
+  from. Download it and study its structure.
+
+\item Fill in the missing code segments (
+  marked with  {\tt [ FILL IN CODE ]} ). You will have to implement
+  the grid setup, the right-hand-side (RHS) for both equations,
+  the Euler integrator, and the EOS inversion to obtain a new density
+  from the updated pressure.
+
+  Use a central density of $\rho_c = 10^{10}\,
+  \mathrm{g}\,\mathrm{cm}^{-3}$ and a cut-off pressure corresponding
+  to  $10^{-10} P_c$.  Test the code using 
+  $\sim$1000 points and an outer radius of 2000 km.  You should get
+  something close to $1.45\,M_\odot$ and a radius of
+  $\sim$ $1500\,\mathrm{km}$.
+
+\item Add an RK2 integrator and show convergence on
+  the mass of the star using multiple resolutions. \\
+
+  Implement also an RK3 or RK4 integrator.
+
+\item
+
+  Make a plot of $\rho(r)$ and $P(r)$ and $M(r)$ of a well-resolved
+  RK2 (or RK3 or RK4) run. By intelligently rescaling them and using two
+  $y$-axes, you can fit all of them on one plot. You may want to use a
+  logarithmic scale for density and/or radius.
+  
+\end{enumerate}
+
+Happy Coding :) !
+
+\end{document}
