@@ -199,16 +199,16 @@ def main():
 	""" N-body simulation """
 	
 	# Simulation parameters
-	N     = 500    # Number of particles
+	N     = 1000    # Number of particles
 	t     = 0      # current time of the simulation
-	tEnd  = 12     # time at which simulation ends
+	tEnd  = 15     # time at which simulation ends
 	dt    = 0.04   # timestep
 	M     = 2      # star mass
 	R     = 0.75   # star radius
 	h     = 0.1    # smoothing length
 	k     = 0.1    # equation of state constant
 	n     = 1      # polytropic index
-	nu    = 1      # damping
+	nu    = 0.8      # damping
 	
 	# Generate Initial Conditions
 	np.random.seed(413)            # set the random number generator seed
